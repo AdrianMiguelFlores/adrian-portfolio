@@ -99,7 +99,7 @@ const MilestonesSection = () => {
                   {data[activeTab].map((item, index) => (
                     <div key={`${activeTab}-${index}`} className="relative pl-12 group/item">
                       
-                      <div className="absolute -left-[27px] top-1/2 -translate-y-1/2 z-20">
+                      <div className="absolute -left-6.75 top-1/2 -translate-y-1/2 z-20">
                         <div className="w-13 h-13 rounded-2xl bg-[#111] border border-white/20 p-2.5 shadow-2xl transition-all duration-400 group-hover/item:border-primary-400/60 group-hover/item:scale-110">
                           <img 
                             src={item.logo} 
@@ -113,7 +113,7 @@ const MilestonesSection = () => {
                         
                         <div className="absolute inset-0 translate-x-[-150%] group-hover/item:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-linear-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
                         
-                        <div className="absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-400 z-30" />
+                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-400 z-30" />
                         
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_50%)] opacity-0 group-hover/item:opacity-100 transition-opacity duration-500 pointer-events-none" />
 

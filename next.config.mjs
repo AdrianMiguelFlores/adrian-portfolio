@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* Only add standard config options here */
+  // This helps bypass the experimental Turbopack CSS parser
+  transpilePackages: ["lucide-react"],
+  // Explicitly tell Next.js NOT to use turbo for builds if possible
+  poweredByHeader: false,
 };
 
 export default nextConfig;

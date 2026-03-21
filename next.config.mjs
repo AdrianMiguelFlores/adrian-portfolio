@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Adding an empty webpack config forces Next.js to use Webpack instead of Turbo
+  // Empty config to satisfy the check
+  turbopack: {},
   webpack: (config) => {
     return config;
   },

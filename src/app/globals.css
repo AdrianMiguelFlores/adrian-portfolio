@@ -1,3 +1,31 @@
+/* 1. YOUR CUSTOM VARIABLES FIRST (Safe Zone) */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 2. YOUR CUSTOM SCROLLBAR (Standard CSS) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #a855f71a;
+  border-radius: 20px;
+}
+
+/* 3. TAILWIND LAST */
 @import "tailwindcss";
 
 @theme {
@@ -12,37 +40,7 @@
   --color-primary-800: #6b21a8;
   --color-primary-900: #581c87;
   --color-primary-950: #3b0764;
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* Using standard CSS instead of @utility to prevent the parser crash */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #a855f71a; /* Using hex with alpha for maximum compatibility */
-  border-radius: 20px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #a855f74d;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }

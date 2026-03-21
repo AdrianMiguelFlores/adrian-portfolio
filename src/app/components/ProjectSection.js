@@ -68,7 +68,7 @@ const ProjectSection = () => {
             key={project.id}
             onClick={() => setSelectedProject(project.id)}
             className={`group relative flex flex-col h-full text-left
-                       rounded-3xl border border-white/10 bg-white/5 backdrop-blur-[40px]
+                       rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl
                        transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) overflow-hidden shadow-2xl
                        hover:bg-white/8 hover:border-white/20 hover:-translate-y-1 
                        hover:will-change-transform active:scale-[0.98]`}
@@ -90,7 +90,7 @@ const ProjectSection = () => {
               </div>
             </div>
 
-            <div className={`p-6 flex flex-col flex-grow relative border-t border-white/10`}>
+            <div className={`p-6 flex flex-col grow relative border-t border-white/10`}>
               <h3 className={`text-xl font-black text-white mb-2 tracking-tight group-hover:text-primary-400 transition-colors duration-500`}>
                 {project.title}
               </h3>

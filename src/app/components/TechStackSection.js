@@ -36,16 +36,16 @@ const TechStackSection = () => {
                        hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]`}
           >
             {/* Liquid Surface Sheen - Sweeps across on hover */}
-            <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-linear-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
             
             {/* Top Rim Light - Mimics light hitting the edge */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-30 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r from-transparent via-white/40 to-transparent opacity-30 group-hover:opacity-100 transition-opacity duration-500 z-30" />
             
             {/* Inner Glass Glow - The "Pronounced" Liquid look */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             {/* Bottom Refraction Bloom */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             {/* Icon Container with Float Animation */}
             <div className="relative z-10 p-4 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-3">

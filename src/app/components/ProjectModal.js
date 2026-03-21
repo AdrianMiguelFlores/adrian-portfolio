@@ -18,12 +18,12 @@ export default function ProjectModal({ project, onClose, onNext, onPrev }) {
   return (
     <div 
       ref={overlayRef}
-      className="fixed inset-0 bg-slate-950/90 backdrop-blur-xl flex items-center justify-center z-[100] p-4 md:p-8 animate-in fade-in duration-300"
+      className="fixed inset-0 bg-slate-950/90 backdrop-blur-xl flex items-center justify-center z-100 p-4 md:p-8 animate-in fade-in duration-300"
       onClick={handleOutsideClick}
     >
       <div 
         key={project.id}
-        className="relative bg-white/5 border border-white/10 rounded-[2.5rem] max-w-5xl w-full h-[90vh] lg:h-[80vh] overflow-hidden shadow-2xl backdrop-blur-[40px] flex flex-col lg:flex-row animate-in zoom-in-95 duration-500"
+        className="relative bg-white/5 border border-white/10 rounded-[2.5rem] max-w-5xl w-full h-[90vh] lg:h-[80vh] overflow-hidden shadow-2xl backdrop-blur-2xl flex flex-col lg:flex-row animate-in zoom-in-95 duration-500"
         onClick={(e) => e.stopPropagation()}    
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/25 to-transparent z-50" />
@@ -113,7 +113,7 @@ export default function ProjectModal({ project, onClose, onNext, onPrev }) {
             </div>
           </div>
           
-          <div className="p-6 lg:px-14 py-5 border-t border-white/5 flex justify-between items-center opacity-30 relative z-10 bg-white/[0.02]">
+          <div className="p-6 lg:px-14 py-5 border-t border-white/5 flex justify-between items-center opacity-30 relative z-10 bg-white/2">
              <span className="text-white text-[9px] uppercase font-black tracking-[0.3em]">Ref: {project.id.toString().padStart(3, '0')}</span>
              <span className="text-white text-[9px] uppercase font-black tracking-[0.3em]">Adi Flores © 2026</span>
           </div>

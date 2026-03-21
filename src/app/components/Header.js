@@ -27,7 +27,7 @@ const Navbar = () => {
         onMouseMove={handleMouseMove}
         className={`relative flex items-center justify-between px-8 py-3 rounded-full transition-all duration-700 border pointer-events-auto overflow-hidden group/nav
           ${scrolled 
-            ? "w-full max-w-3xl bg-white/[0.02] backdrop-blur-2xl border-white/10 shadow-2xl shadow-purple-900/10" 
+            ? "w-full max-w-3xl bg-white/2 backdrop-blur-2xl border-white/10 shadow-2xl shadow-purple-900/10" 
             : "w-full max-w-5xl bg-transparent border-transparent shadow-none"
           }`}
       >

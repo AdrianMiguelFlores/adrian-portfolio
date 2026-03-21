@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This helps bypass the experimental Turbopack CSS parser
-  transpilePackages: ["lucide-react"],
-  // Explicitly tell Next.js NOT to use turbo for builds if possible
-  poweredByHeader: false,
+  // Adding an empty webpack config forces Next.js to use Webpack instead of Turbo
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig;

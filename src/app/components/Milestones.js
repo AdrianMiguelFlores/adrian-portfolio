@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const MilestonesSection = () => {
   const [activeTab, setActiveTab] = useState("education");
@@ -52,7 +53,7 @@ const MilestonesSection = () => {
     <section id="milestones" className="py-12 mt-6 w-full font-sans bg-transparent">
       <div className="mb-10 space-y-3 px-2">
         <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white uppercase">
-          Journey & <span className="bg-clip-text text-transparent bg-linear-to-r from-primary-400 via-primary-500 to-purple-600 pr-4">Milestones</span>
+          Journey & <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 pr-4">Milestones</span>
         </h2>
         <p className="text-slate-400 max-w-2xl text-lg font-medium tracking-tight opacity-80">
           Academic progression and professional certifications.
@@ -75,7 +76,7 @@ const MilestonesSection = () => {
                   {activeTab === tab && (
                     <motion.div
                       layoutId="activeTabGlow"
-                      className="absolute inset-0 bg-primary-600/30 border border-primary-500/40 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.2)]"
+                      className="absolute inset-0 bg-purple-600/30 border border-purple-500/40 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.2)]"
                       transition={{ type: "spring", bounce: 0, duration: 0.3 }}
                     />
                   )}
@@ -100,10 +101,12 @@ const MilestonesSection = () => {
                     <div key={`${activeTab}-${index}`} className="relative pl-12 group/item">
                       
                       <div className="absolute -left-6.75 top-1/2 -translate-y-1/2 z-20">
-                        <div className="w-13 h-13 rounded-2xl bg-[#111] border border-white/20 p-2.5 shadow-2xl transition-all duration-400 group-hover/item:border-primary-400/60 group-hover/item:scale-110">
-                          <img 
+                        <div className="w-13 h-13 relative rounded-2xl bg-[#111] border border-white/20 p-2.5 shadow-2xl transition-all duration-400 group-hover/item:border-purple-400/60 group-hover/item:scale-110">
+                          <Image 
                             src={item.logo} 
                             alt={item.org} 
+                            width={52}
+                            height={52}
                             className="w-full h-full object-contain brightness-125"
                           />
                         </div>
@@ -128,13 +131,13 @@ const MilestonesSection = () => {
                           </div>
                           
                           <div className="shrink-0">
-                            <span className="inline-block px-3.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-full bg-white/10 text-primary-300 border border-white/10 backdrop-blur-md transition-all group-hover/item:border-primary-500/40 group-hover/item:text-white">
+                            <span className="inline-block px-3.5 py-1 text-[10px] font-black uppercase tracking-wider rounded-full bg-white/10 text-purple-300 border border-white/10 backdrop-blur-md transition-all group-hover/item:border-purple-500/40 group-hover/item:text-white">
                               {item.date}
                             </span>
                           </div>
                         </div>
 
-                        <div className="absolute inset-x-4 bottom-0 h-px bg-linear-to-r from-transparent via-primary-500 to-transparent scale-x-0 group-hover/item:scale-x-100 transition-transform duration-700 ease-out shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
+                        <div className="absolute inset-x-4 bottom-0 h-px bg-linear-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover/item:scale-x-100 transition-transform duration-700 ease-out shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
                       </div>
                     </div>
                   ))}

@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Empty config to satisfy the check
-  turbopack: {},
-  webpack: (config) => {
-    return config;
-  },
+  /* Config options here if needed later */
 };
 
 export default nextConfig;

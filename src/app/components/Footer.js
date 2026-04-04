@@ -88,8 +88,6 @@ const Footer = () => {
           
           <div className="flex items-center gap-4 text-white/30">
              <span className="text-[8px] font-black uppercase tracking-[0.2em]">Based in PH</span>
-             <div className="w-px h-3 bg-white/10" />
-             <span className="text-[8px] font-black uppercase tracking-[0.2em]">Local Time: <span suppressHydrationWarning>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></span>
           </div>
         </div>
       </div>

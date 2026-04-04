@@ -123,7 +123,6 @@ const ProjectSection = () => {
           fill
           className="object-cover transition-transform duration-1000 ease-out group-hover:scale-111"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent z-10 opacity-60" />
         <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 translate-y-2 group-hover:translate-y-0">
           <ExternalLink size={18} className="text-purple-400" />
         </div>
@@ -140,7 +139,6 @@ const ProjectSection = () => {
           {project.description}
         </p>
         
-        {/* Updated: All tags are now visible */}
         <div className="mt-auto flex flex-wrap gap-1.5">
           {project.techStack.map((tag, idx) => (
             <span key={idx} className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20">

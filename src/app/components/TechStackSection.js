@@ -11,6 +11,9 @@ const skills = [
   { name: "PostgreSQL", icon: "/skills-icons/postgres.svg" },
   { name: "Tailwind", icon: "/skills-icons/tailwind.svg" },
   { name: "Bootstrap", icon: "/skills-icons/bootstrap.svg" },
+  { name: "C++", icon: "/skills-icons/c++.svg" },
+  { name: "PHP", icon: "/skills-icons/php.svg" },
+  { name: "MySQL", icon: "/skills-icons/mysql.svg" },
 ];
 
 const TechStackSection = () => {

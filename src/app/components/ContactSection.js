@@ -43,7 +43,7 @@ const ContactSection = () => {
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
         </svg>
       ),
-      link: "https://www.facebook.com/grape.pye",
+      link: "https://www.facebook.com/adi.flres",
       colorClasses: "text-[#1877F2] lg:text-slate-500 lg:group-hover:text-[#1877F2]",
       label: "Social",
     },
@@ -60,7 +60,6 @@ const ContactSection = () => {
         </p>
       </div>
 
-      {/* Grid: 2 columns on mobile, 3 on tablet, 4 on desktop */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 px-4 md:px-0">
         {socials.map((social, index) => (
           <a
@@ -70,14 +69,12 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="group block relative"
           >
-            {/* Reduced padding to p-4 on mobile for better fit */}
             <div className="relative h-full p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-white/[0.03] backdrop-blur-3xl transition-all duration-500 ease-out overflow-hidden shadow-2xl hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-1.5 active:scale-95">
               
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
               <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
               
               <div className="flex items-start justify-between mb-4 md:mb-8">
-                {/* Scaled down icon containers for small screens */}
                 <div className={`w-9 h-9 md:w-12 md:h-12 flex items-center justify-center rounded-lg md:rounded-2xl bg-black/40 border border-white/10 transition-all duration-500 group-hover:border-purple-500/50 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] ${social.colorClasses}`}>
                   <div className="w-5 h-5 md:w-6 md:h-6">
                     {social.icon}

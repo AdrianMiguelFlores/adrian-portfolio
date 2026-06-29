@@ -1,38 +1,65 @@
+"use client";
 import Image from "next/image";
-import { skillCategories } from "@/app/data";
-import GlassCard from "@/app/components/ui/GlassCard";
+import { techSkills } from "../../data";
 
-export default function TechStackSection() {
+const TechStackSection = () => {
+  const skills = techSkills;
   return (
-    <section id="tech-stack" className="scroll-mt-24">
-      <div className="mb-10">
-        <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
-          Tech <span className="bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">Stack</span>
+    <section id="tech-stack" className="py-20 mt-10 w-full font-sans bg-transparent">
+      <div className="mb-12 space-y-4 px-4 md:px-2">
+        <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white uppercase">
+          Tech <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-purple-500 to-purple-600">Stack</span>
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-          Technologies I use across coursework, full-stack projects, and software engineering practice.
+        <p className="text-slate-400 max-w-2xl text-lg font-medium tracking-tight opacity-80">
+          The collection of technologies I use to design and build modern web applications.
         </p>
       </div>
 
-      <GlassCard className="p-5 sm:p-7">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {skillCategories.map((category) => (
-            <div key={category.title}>
-              <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-white/70">{category.title}</h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-3 transition duration-300 hover:border-violet-400/40 hover:bg-white/[0.08]">
-                    <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-black/30">
-                      <Image src={skill.icon} alt={`${skill.name} icon`} width={24} height={24} className="h-6 w-6 object-contain" />
-                    </span>
-                    <span className="text-sm font-semibold text-white/75 transition group-hover:text-white">{skill.name}</span>
-                  </div>
-                ))}
+      <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-9 gap-2.5 sm:gap-4 w-full px-3 md:px-0">
+        {skills.map((skill) => (
+          <div
+            key={skill.name}
+            className="group relative aspect-square w-full flex flex-col items-center justify-center rounded-2xl md:rounded-[2rem] border border-white/10 bg-white/[0.02] backdrop-blur-3xl transition-all duration-500 ease-out overflow-hidden hover:bg-white/[0.08] hover:border-white/20 hover:-translate-y-2 shadow-2xl"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+            
+            <div className="relative z-10 flex flex-col items-center justify-center w-full h-full p-2">
+              <div className="relative w-[55%] h-[55%] sm:w-14 sm:h-14 flex items-center justify-center rounded-xl md:rounded-2xl bg-black/40 border border-white/10 transition-all duration-500 
+                              text-slate-500 lg:opacity-60 
+                              group-hover:grayscale-0 group-hover:opacity-100 group-hover:border-purple-500/50 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]
+                              lg:group-hover:-translate-y-3">
+                
+                <div className="absolute inset-0 bg-blue-500/5 opacity-100 lg:opacity-40 group-hover:opacity-0 transition-opacity rounded-xl md:rounded-2xl" />
+
+                <div className="relative w-[60%] h-[60%]">
+                  <Image
+                    src={skill.icon}
+                    alt={skill.name}
+                    fill
+                    className="object-contain brightness-110"
+                  />
+                </div>
               </div>
+
+              <span className="text-[10px] xs:text-[11px] md:text-[8px] lg:text-[10px] font-black uppercase tracking-tight xs:tracking-wider
+                               text-slate-400 lg:opacity-0 lg:translate-y-4 
+                               transition-all duration-500 
+                               mt-2 lg:mt-0 lg:absolute lg:bottom-5
+                               group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-purple-300
+                               w-full text-center px-1 break-words leading-none">
+                {skill.name}
+              </span>
             </div>
-          ))}
-        </div>
-      </GlassCard>
+
+            <div className="absolute inset-x-6 bottom-0 h-px bg-linear-to-r from-transparent via-purple-500/50 to-transparent 
+                            scale-x-50 lg:scale-x-0 group-hover:scale-x-100 
+                            transition-transform duration-700" />
+          </div>
+        ))}
+      </div>
     </section>
   );
-}
+};
+
+export default TechStackSection;

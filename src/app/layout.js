@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Header";
-import Footer from "./components/Footer";
+import Navbar from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import { profile } from "./data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Adi | Portfolio",
-  description: "Personal portfolio and professional milestones of Adi Flores.",
+  title: `${profile.name} | Portfolio`,
+  description: `Personal portfolio and professional milestones of ${profile.shortName}.`,
 };
 
 export default function RootLayout({ children }) {

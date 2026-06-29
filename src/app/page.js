@@ -1,8 +1,8 @@
-import HeroSection from "./components/HeroSection";
-import MilestonesSection from "./components/Milestones";
-import ProjectSection from "./components/ProjectSection";
-import TechStackSection from "./components/TechStackSection";
-import ContactSection from "./components/ContactSection";
+import HeroSection from "./components/sections/HeroSection";
+import MilestonesSection from "./components/sections/Milestones";
+import ProjectSection from "./components/sections/ProjectSection";
+import TechStackSection from "./components/sections/TechStackSection";
+import ContactSection from "./components/sections/ContactSection";
 
 export default function Home() {
   return (

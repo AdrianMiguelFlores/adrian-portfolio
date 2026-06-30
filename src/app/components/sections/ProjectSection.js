@@ -37,37 +37,37 @@ const ProjectSection = () => {
   const ProjectCard = ({ project, isSmall = false }) => (
     <button
       onClick={() => setSelectedProject(project.id)}
-      className={`group relative flex flex-col text-left rounded-[2rem] border border-white/10 bg-white/[0.03] backdrop-blur-3xl transition-all duration-500 overflow-hidden shadow-2xl hover:bg-white/[0.07] hover:border-purple-500/30 hover:-translate-y-2 active:scale-[0.98] ${isSmall ? 'h-[380px]' : 'h-[420px]'}`}
+      className={`group relative flex flex-col text-left rounded-[2rem] border border-white/10 bg-white/[0.03] backdrop-blur-3xl transition-all duration-500 overflow-hidden shadow-2xl hover:bg-white/[0.07] hover:border-purple-500/30 hover:-translate-y-2 active:scale-[0.98] ${isSmall ? 'h-[360px] sm:h-[380px] md:h-[400px]' : 'h-[380px] sm:h-[400px] md:h-[420px] lg:h-[440px]'}`}
     >
       <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent z-20" />
       
-      <div className={`relative w-full overflow-hidden ${isSmall ? 'h-40' : 'h-48'}`}>
+      <div className={`relative w-full overflow-hidden ${isSmall ? 'h-32 sm:h-36 md:h-40' : 'h-40 sm:h-44 md:h-48 lg:h-52'}`}>
         <Image
           src={project.image}
           alt={project.title}
           fill
           className="object-cover transition-transform duration-1000 ease-out group-hover:scale-111"
         />
-        <div className="absolute top-4 right-4 p-2.5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 translate-y-2 group-hover:translate-y-0">
-          <ExternalLink size={18} className="text-purple-400" />
+        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 p-2 sm:p-2.5 rounded-xl bg-black/60 border border-white/10 backdrop-blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 translate-y-2 group-hover:translate-y-0">
+          <ExternalLink size={16} className="sm:size-[18px] text-purple-400" />
         </div>
       </div>
 
-      <div className="p-6 flex flex-col grow relative border-t border-white/5">
-        <div className="flex items-center gap-2 mb-2">
+      <div className="p-4 sm:p-5 md:p-6 flex flex-col grow relative border-t border-white/5">
+        <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
           <div className="h-1.5 w-1.5 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)]" />
-          <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors duration-300">
+          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight group-hover:text-purple-300 transition-colors duration-300">
             {project.title}
           </h3>
         </div>
-        <p className="text-xs font-normal text-slate-400 mb-4 line-clamp-2 opacity-80 leading-relaxed">
+        <p className="text-[11px] sm:text-xs md:text-sm font-normal text-slate-400 mb-3 sm:mb-4 line-clamp-2 opacity-80 leading-relaxed">
           {project.description}
         </p>
         
-        <div className="mt-auto flex flex-wrap gap-1.5">
+        <div className="mt-auto flex flex-wrap gap-1 sm:gap-1.5">
           {project.techStack.map((tag, idx) => (
-            <span key={idx} className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20">
+            <span key={idx} className="px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[9px] font-bold uppercase tracking-widest rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20">
               {tag}
             </span>
           ))}
@@ -80,12 +80,12 @@ const ProjectSection = () => {
 
   return (
     <section id="projects" className="py-20 mt-10 w-full font-sans">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 px-2">
-        <div className="space-y-4">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white uppercase">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16 px-2">
+        <div className="space-y-3 md:space-y-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white uppercase leading-tight">
             Featured <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-purple-500 to-purple-600">Projects</span>
           </h2>
-          <p className="text-slate-400 max-w-xl text-lg font-medium tracking-tight opacity-80">
+          <p className="text-slate-400 max-w-xl text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-tight opacity-80 leading-relaxed">
             A selection of my recent work. Click to view technical details and challenges.
           </p>
         </div>
@@ -93,15 +93,15 @@ const ProjectSection = () => {
         <div className="flex justify-center md:justify-end">
           <button 
             onClick={() => setShowAllModal(true)}
-            className="group flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/[0.07] md:bg-white/5 border border-purple-500/30 md:border-white/10 backdrop-blur-xl text-white font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-purple-500/20 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] active:scale-95 shadow-xl md:shadow-none"
+            className="group flex items-center gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white/[0.07] md:bg-white/5 border border-purple-500/30 md:border-white/10 backdrop-blur-xl text-white font-bold text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-300 hover:bg-purple-500/20 hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] active:scale-95 shadow-xl md:shadow-none"
           >
-            <LayoutGrid size={16} className="text-purple-400 group-hover:rotate-12 transition-transform duration-500" />
-            Show All Projects
+            <LayoutGrid size={14} className="sm:size-4 text-purple-400 group-hover:rotate-12 transition-transform duration-500" />
+            <span>Show All Projects</span>
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 px-2">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
@@ -121,24 +121,24 @@ const ProjectSection = () => {
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-10 bg-[url('https://grainy-linears.vercel.app/noise.svg')]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.05),transparent_60%)] pointer-events-none z-10" />
 
-            <div className="p-8 border-b border-white/10 flex items-center justify-between relative z-20 bg-black/10">
+            <div className="p-6 sm:p-8 border-b border-white/10 flex items-center justify-between relative z-20 bg-black/10">
               <div className="space-y-1.5">
                 <div className="flex items-center gap-3 text-purple-400">
                   <Terminal size={12} className="opacity-80" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em] opacity-70">Projects</span>
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] opacity-70">Projects</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none">Complete Project Registry</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none">Complete Project Registry</h3>
               </div>
               <button 
                 onClick={() => setShowAllModal(false)}
-                className="p-3.5 rounded-2xl bg-black/40 border border-white/10 text-slate-400 hover:text-white hover:border-purple-500/50 transition-all active:scale-90 group/close"
+                className="p-2.5 sm:p-3.5 rounded-2xl bg-black/40 border border-white/10 text-slate-400 hover:text-white hover:border-purple-500/50 transition-all active:scale-90 group/close"
               >
-                <X size={20} className="group-hover/close:rotate-90 transition-transform duration-500" />
+                <X size={18} className="sm:size-5 group-hover/close:rotate-90 transition-transform duration-500" />
               </button>
             </div>
             
-            <div className="grow overflow-y-auto px-6 py-10 md:px-10 md:py-12 custom-scrollbar relative z-20">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-16">
+            <div className="grow overflow-y-auto px-4 sm:px-6 md:px-10 py-8 sm:py-10 md:py-12 custom-scrollbar relative z-20">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 pb-16">
                 {projects.map((project) => (
                   <ProjectCard key={project.id} project={project} isSmall={true} />
                 ))}

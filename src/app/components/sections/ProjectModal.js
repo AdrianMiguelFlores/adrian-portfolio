@@ -18,27 +18,27 @@ export default function ProjectModal({ project, onClose, onNext, onPrev }) {
   return (
     <div 
       ref={overlayRef}
-      className="fixed inset-0 bg-slate-950/95 backdrop-blur-2xl flex items-center justify-center z-[100] p-2 md:p-6 lg:p-12 animate-in fade-in duration-300"
+      className={`fixed inset-0 bg-slate-950/95 backdrop-blur-2xl overflow-y-auto flex items-start md:items-center justify-center z-[100] p-4 md:p-6 lg:p-12 animate-in fade-in duration-300`}
       onClick={handleOutsideClick}
     >
       <div 
         key={project.id}
-        className="relative bg-white/[0.03] border border-white/10 rounded-[2.5rem] md:rounded-[3rem] max-w-6xl w-full h-[98vh] md:h-[92vh] lg:h-[85vh] overflow-hidden shadow-2xl backdrop-blur-3xl flex flex-col lg:flex-row animate-in zoom-in-95 duration-500"
+        className={`relative bg-white/[0.03] border border-white/10 rounded-[2.5rem] md:rounded-[3rem] max-w-6xl w-full my-auto h-auto lg:h-[85vh] overflow-hidden shadow-2xl backdrop-blur-3xl flex flex-col lg:flex-row animate-in zoom-in-95 duration-500`}
         onClick={(e) => e.stopPropagation()}    
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-50" />
         
         <button
           onClick={onClose} 
-          className="absolute top-4 right-4 lg:top-6 lg:right-6 z-50 p-3 rounded-2xl bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-all backdrop-blur-xl group/close active:scale-90"
+          className={`absolute top-4 right-4 lg:top-6 lg:right-6 z-50 p-3 rounded-2xl bg-black/60 border border-white/10 text-slate-400 hover:text-white transition-all backdrop-blur-xl group/close active:scale-90`}
         >
           <X size={18} className="group-hover/close:rotate-90 transition-transform duration-500" />
         </button>
 
-        <div className="relative w-full lg:w-[42%] shrink-0 bg-black/40 flex flex-col items-center justify-center p-6 md:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-white/10">
+        <div className={`relative w-full lg:w-[42%] shrink-0 bg-black/40 flex flex-col items-center justify-center p-6 md:p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-white/10`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_70%)] pointer-events-none" />
 
-          <div className="relative w-full max-w-[400px] lg:max-w-none aspect-video group/imgContainer">
+          <div className={`relative w-full max-w-[400px] lg:max-w-none aspect-video group/imgContainer`}>
             <div className="absolute -inset-4 bg-purple-600/20 blur-3xl rounded-full opacity-50 group-hover/imgContainer:opacity-100 transition-opacity duration-700" />
             <div className="relative h-full w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900">
               <Image 
@@ -52,14 +52,14 @@ export default function ProjectModal({ project, onClose, onNext, onPrev }) {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-6 lg:mt-10 z-20">
+          <div className={`flex gap-4 mt-6 lg:mt-10 z-20`}>
             <button onClick={onPrev} className="p-3 lg:p-4 rounded-xl lg:rounded-2xl bg-white/5 border border-white/10 text-white backdrop-blur-3xl hover:bg-purple-500/20 transition-all active:scale-90"><ChevronLeft size={20} /></button>
             <button onClick={onNext} className="p-3 lg:p-4 rounded-xl lg:rounded-2xl bg-white/5 border border-white/10 text-white backdrop-blur-3xl hover:bg-purple-500/20 transition-all active:scale-90"><ChevronRight size={20} /></button>
           </div>
         </div>
 
-        <div className="w-full grow overflow-hidden flex flex-col relative">
-          <div className="grow overflow-y-auto px-6 py-8 md:px-10 md:py-10 lg:px-12 lg:py-12 custom-scrollbar relative z-10 flex flex-col gap-8 lg:gap-10">
+        <div className={`w-full grow overflow-hidden flex flex-col relative`}>
+          <div className={`grow overflow-y-visible lg:overflow-y-auto px-6 py-8 md:px-10 md:py-10 lg:px-12 lg:py-12 custom-scrollbar relative z-10 flex flex-col gap-8 lg:gap-10`}>
             
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-purple-400">
@@ -117,7 +117,7 @@ export default function ProjectModal({ project, onClose, onNext, onPrev }) {
             </div>
           </div>
           
-          <div className="px-6 py-6 md:px-12 md:py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 relative z-10 bg-white/[0.01]">
+          <div className={`px-6 py-6 md:px-12 md:py-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6 relative z-10 bg-white/[0.01]`}>
              <div className="hidden sm:flex items-center gap-4 opacity-40">
                 <span className="text-white text-[9px] uppercase font-black tracking-[0.3em]">REF_ID: {project.id.toString().padStart(3, '0')}</span>
                 <div className="w-1 h-1 rounded-full bg-white" />

@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         <div className="relative z-10 flex flex-col">
           <Navbar />
           
-          <main className="grow mt-10 md:mt-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+          <main className="grow mt-10 md:mt-24 px-1.5 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
             {children}
           </main>
 

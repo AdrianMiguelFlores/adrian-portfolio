@@ -24,14 +24,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-4 md:p-6 pointer-events-none">
       <nav 
         ref={navRef}
         onMouseMove={handleMouseMove}
-        className={`relative flex items-center justify-between px-8 py-3 rounded-full transition-all duration-700 border pointer-events-auto overflow-hidden group/nav
+        className={`relative flex items-center justify-between px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-700 border pointer-events-auto overflow-hidden group/nav
           ${scrolled 
-            ? "w-full max-w-3xl bg-white/5 backdrop-blur-2xl border-white/10 shadow-2xl shadow-purple-900/10" 
-            : "w-full max-w-5xl bg-transparent border-transparent shadow-none"
+            ? "w-full max-w-2xl sm:max-w-3xl md:max-w-4xl bg-white/5 backdrop-blur-2xl border-white/10 shadow-2xl shadow-purple-900/10" 
+            : "w-full max-w-3xl sm:max-w-5xl md:max-w-6xl bg-transparent border-transparent shadow-none"
           }`}
       >
         {/* Corrected radial-gradient syntax */}
@@ -44,14 +44,14 @@ const Navbar = () => {
         <div className="relative z-10">
           <Link
             href="/"
-            className="text-2xl font-black tracking-tighter text-white transition-all hover:scale-105 active:scale-95 group"
+            className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter text-white transition-all hover:scale-105 active:scale-95 group"
           >
             {brandName}<span className="text-purple-500 transition-all duration-500 group-hover:text-purple-400">.</span>
           </Link>
         </div>
 
-        <div className="flex items-center gap-8 relative z-10">
-          <ul className="hidden md:flex items-center gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8 relative z-10">
+          <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-slate-400">
             {navLinks.filter((link) => !link.isButton).map((link) => (
               <li key={link.href}>
                 <Link
@@ -70,7 +70,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="relative px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-[10px] font-black uppercase tracking-[0.25em] text-white/90 transition-all duration-700 hover:scale-105 hover:bg-white/8 hover:border-white/20 group overflow-hidden"
+              className="relative px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-[8px] sm:text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] md:tracking-[0.25em] text-white/90 transition-all duration-700 hover:scale-105 hover:bg-white/8 hover:border-white/20 group overflow-hidden"
             >
               <div className="absolute inset-0 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-500 ease-in-out bg-linear-to-r from-transparent via-purple-500/10 to-transparent pointer-events-none" />
               <span className="relative z-10">{link.label}</span>

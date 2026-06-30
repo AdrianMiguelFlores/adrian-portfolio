@@ -33,21 +33,27 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[70vh] flex items-center justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden bg-transparent">
-      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
+    <section className="relative w-full min-h-[70vh] flex items-center justify-center py-6 sm:py-14 md:py-16 px-4 sm:px-6 overflow-hidden bg-transparent">
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center px-4 sm:px-8">
         
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-3 sm:mb-4 md:mb-6 leading-[1.1] text-white pt-8 sm:pt-10 md:pt-12">
-          I&apos;m <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 via-purple-500 to-purple-600 drop-shadow-[0_0_25px_rgba(168,85,247,0.4)] pr-2 sm:pr-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-500/20 bg-purple-500/[0.03] backdrop-blur-md mb-3 sm:mb-5 md:mb-6 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+          <span className="w-1 h-1 rounded-full bg-purple-500 animate-ping" />
+          <span className="text-[9px] font-black uppercase tracking-[0.25em] text-purple-300/90">Available For Opportunities</span>
+        </div>
+
+        <h1 className="text-6xl leading-[1.15] sm:text-7xl md:text-8xl font-black tracking-tighter mb-2 sm:mb-4 text-white max-w-4xl whitespace-normal break-words">
+          <span className="font-black tracking-tighter mr-2 sm:mr-4 inline">I&apos;m</span>{" "}
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-300 via-purple-500 to-purple-600 drop-shadow-[0_0_30px_rgba(168,85,247,0.35)] px-1 py-1 sm:py-3 inline pb-3">
             {profile.name}
           </span>
         </h1>
         
-        <div className="h-7 sm:h-8 md:h-10 mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-sm sm:text-2xl md:text-3xl lg:text-4xl font-medium text-slate-400 tracking-tight">
-            {text}
-            <span className="ml-1 inline-block w-0.5 sm:w-1 h-5 sm:h-6 md:h-8 bg-purple-500 animate-pulse" />
-            <span className="text-slate-500 mx-2 text-lg sm:text-2xl md:text-3xl font-light">@</span>
-            <span className="text-white font-semibold">{heroData.school}</span>
+        <div className="h-8 sm:h-8 mb-6 sm:mb-10 flex items-center justify-center">
+          <h2 className="text-base sm:text-xl md:text-2xl font-bold text-slate-400 tracking-tight flex items-center justify-center flex-wrap gap-y-1 max-w-2xl">
+            <span className="text-slate-200">{text}</span>
+            <span className="ml-1 inline-block w-0.5 h-4 sm:h-5 bg-purple-500 animate-pulse" />
+            <span className="text-purple-500/50 mx-2 text-sm sm:text-lg font-light">@</span>
+            <span className="text-purple-300/90 font-black">{heroData.school}</span>
           </h2>
         </div>
 
@@ -56,43 +62,48 @@ const HeroSection = () => {
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
-          className="relative group max-w-2xl mb-16 cursor-default"
+          className="relative group max-w-2xl mb-8 sm:mb-12 cursor-default w-full transition-all duration-500 hover:scale-[1.01]"
         >
             <div 
-              className="absolute inset-0 z-0 transition-opacity duration-500 rounded-[2.5rem] pointer-events-none"
+              className="absolute inset-0 z-0 transition-opacity duration-500 rounded-[2rem] pointer-events-none"
               style={{
-                opacity: isHovering ? 0.7 : 0,
-                background: `radial-gradient(400px circle at ${glowPos.x}px ${glowPos.y}px,rgba(168,85,247,0.25),transparent 70%)`,
+                opacity: isHovering ? 1 : 0,
+                background: `radial-gradient(350px circle at ${glowPos.x}px ${glowPos.y}px, rgba(168,85,247,0.2), transparent 75%)`,
               }}
             />
 
-            <div className="absolute -inset-1 bg-linear-to-r from-purple-500/10 to-purple-500/10 rounded-[2.5rem] blur-2xl opacity-40" />
+            <div className="absolute -inset-1 bg-linear-to-r from-purple-600/10 to-indigo-600/10 rounded-[2rem] blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
             
-            <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 rounded-[2.5rem] border border-white/20 bg-white/5 backdrop-blur-3xl shadow-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent opacity-50" />
+            <div className="relative p-5 sm:p-8 rounded-[2rem] 
+                        bg-white/[0.02] backdrop-blur-xl shadow-[0_12px_40px_0_rgba(0,0,0,0.6)]
+                        border border-white/[0.12] border-b-white/[0.03] border-r-white/[0.03]
+                        before:absolute before:inset-0 before:pointer-events-none
+                        before:bg-gradient-to-br before:from-white/[0.05] before:via-transparent before:to-transparent
+                        after:absolute after:inset-0 after:pointer-events-none
+                        after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),inset_0_-1px_6px_rgba(0,0,0,0.5)]
+                        overflow-hidden text-center">
               
-              <p className="relative text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed md:leading-relaxed font-medium italic">
-              &quot;{heroData.quote}&quot;
+              <p className="relative z-10 text-xs sm:text-base md:text-lg lg:text-xl text-purple-100/80 leading-relaxed font-medium italic tracking-wide">
+                &quot;{heroData.quote}&quot;
               </p>
             </div>
         </div>
 
         <div className="relative group">
-          <div className="absolute -inset-2 bg-linear-to-r from-purple-500/20 to-purple-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
+          <div className="absolute -inset-2 bg-linear-to-r from-purple-500/20 to-purple-700/20 rounded-full blur-xl opacity-40 group-hover:opacity-100 transition duration-700" />
           
           <a 
             href={heroData.resumeUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="relative flex items-center gap-3 sm:gap-4 px-8 sm:px-12 md:px-14 py-3 sm:py-4 md:py-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl text-white font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] transition-all duration-500 hover:bg-white/10 hover:border-white/30 hover:scale-[1.03] active:scale-95 overflow-hidden group shadow-[0_10px_40px_-15px_rgba(0,0,0,0.5)]"
+            className="relative flex items-center gap-2.5 px-8 sm:px-10 py-3 sm:py-3.5 rounded-full border border-purple-500/30 bg-purple-950/20 hover:bg-purple-900/30 backdrop-blur-xl text-white font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] transition-all duration-500 hover:border-purple-400/40 hover:scale-[1.02] active:scale-95 overflow-hidden group shadow-[0_15px_40px_-15px_rgba(168,85,247,0.3)]"
           >
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-purple-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
             
-            <FileText size={16} className="sm:size-4 md:size-[18px] text-purple-400 group-hover:scale-110 transition-transform duration-300" />
+            <FileText size={14} className="text-purple-400 group-hover:scale-110 transition-transform duration-300" />
             <span className="relative hidden sm:inline">View My Resume</span>
             <span className="relative sm:hidden">Resume</span>
-            <ChevronRight size={16} className="sm:size-4 md:size-[18px] text-slate-500 group-hover:text-white transition-all group-hover:translate-x-1.5" />
+            <ChevronRight size={14} className="text-purple-400/60 group-hover:text-white transition-all group-hover:translate-x-1" />
           </a>
         </div>
 

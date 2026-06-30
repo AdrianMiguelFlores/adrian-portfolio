@@ -23,6 +23,11 @@ const Navbar = () => {
     navRef.current.style.setProperty("--mouse-y", `${e.clientY - top}px`);
   };
 
+  const handleBrandClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-3 sm:p-4 md:p-6 pointer-events-none">
       <nav 
@@ -34,20 +39,19 @@ const Navbar = () => {
             : "w-full max-w-3xl sm:max-w-5xl md:max-w-6xl bg-transparent border-transparent shadow-none"
           }`}
       >
-        {/* Corrected radial-gradient syntax */}
         <div 
           className={`absolute inset-0 pointer-events-none transition-opacity duration-500 opacity-0 group-hover/nav:opacity-100
                      bg-[radial-gradient(400px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(168,85,247,0.15),rgba(255,255,255,0.06)_30%,transparent_60%)]
                      ${scrolled ? "block" : "hidden"}`} 
         />
 
-        <div className="relative z-10">
-          <Link
-            href="/"
-            className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter text-white transition-all hover:scale-105 active:scale-95 group"
+        <div className="relative z-10 pointer-events-auto">
+          <button
+            onClick={handleBrandClick}
+            className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter text-white transition-all hover:scale-105 active:scale-95 group cursor-pointer bg-transparent border-0"
           >
             {brandName}<span className="text-purple-500 transition-all duration-500 group-hover:text-purple-400">.</span>
-          </Link>
+          </button>
         </div>
 
         <div className="flex items-center gap-4 sm:gap-6 md:gap-8 relative z-10">

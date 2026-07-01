@@ -126,18 +126,20 @@ export const projects = [
 ];
 
 export const techSkills = [
-  { name: "Python", icon: "/assets/skills/py.svg" },
-  { name: "Java", icon: "/assets/skills/java.svg" },
-  { name: "Flask", icon: "/assets/skills/flask.svg" },
   { name: "HTML", icon: "/assets/skills/html.svg" },
   { name: "CSS", icon: "/assets/skills/css.svg" },
-  { name: "SQLite", icon: "/assets/skills/sqlite.svg" },
-  { name: "PostgreSQL", icon: "/assets/skills/postgres.svg" },
-  { name: "Tailwind", icon: "/assets/skills/tailwind.svg" },
+  { name: "JavaScript", icon: "/assets/skills/javascript.svg" },
+  { name: "Vue", icon: "/assets/skills/vue.svg" },
+  { name: "Pinia", icon: "/assets/skills/pinia.svg" },
   { name: "Bootstrap", icon: "/assets/skills/bootstrap.svg" },
-  { name: "C++", icon: "/assets/skills/c++.svg" },
-  { name: "PHP", icon: "/assets/skills/php.svg" },
+  { name: "Flask", icon: "/assets/skills/flask.svg" },
+  { name: "Python", icon: "/assets/skills/py.svg" },
+  { name: "Java", icon: "/assets/skills/java.svg" },
+  { name: "SQLite", icon: "/assets/skills/sqlite.svg" },
   { name: "MySQL", icon: "/assets/skills/mysql.svg" },
+  { name: "PostgreSQL", icon: "/assets/skills/postgres.svg" },
+  { name: "Git", icon: "/assets/skills/git.svg" },
+  { name: "GitHub", icon: "/assets/skills/github.svg" },
 ];
 
 export const milestones = {
